@@ -8,4 +8,4 @@ export const ApiOption = {
   }
 };
 
-export const url = 'https://api.themoviedb.org/3/movie/changes?page=1';
+export const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';

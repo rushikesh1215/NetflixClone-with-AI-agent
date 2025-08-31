@@ -28,7 +28,7 @@ const Header = () => {
         navigate("/browse")
       } else {
         dispatch(removeuser());
-        navigate("/login")
+        navigate("/")
       }
     });
 
@@ -36,9 +36,9 @@ const Header = () => {
   }, []);
 
   return (
-    <div className=" flex justify-between w-screen absolute z-2 bg-gradient-to-b from-black">
+    <div className=" flex justify-between w-screen absolute z-3 bg-gradient-to-b from-black">
       <img
-        className="h-20"
+        className="h-20 px-4"
         src={Netflixlogo}
         alt="logo"
       />
@@ -49,7 +49,7 @@ const Header = () => {
       {user && (
         <button
           onClick={logout}
-          className="bg-red-600 h-10 mt-5 hover:bg-red-800 cursor-pointer rounded-lg text-white  m-4 px-2 "
+          className="bg-red-600 h-10 m-5 hover:bg-red-800 cursor-pointer rounded-lg text-white  m-4 px-2 "
         >
           Logout
         </button>
