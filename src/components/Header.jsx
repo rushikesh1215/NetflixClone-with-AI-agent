@@ -49,7 +49,7 @@ const Header = () => {
       {user && (
         <button
           onClick={logout}
-          className="bg-red-600 h-10 m-5 hover:bg-red-800 cursor-pointer rounded-lg text-white  m-4 px-2 "
+          className="bg-red-600 h-10 hover:bg-red-800 cursor-pointer rounded-lg text-white  m-4 px-2 "
         >
           Logout
         </button>
