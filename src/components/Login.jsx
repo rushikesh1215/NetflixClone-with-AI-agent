@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import  { useRef, useState } from "react";
 import Header from "./Header";
 import { validate } from "../utils/validate";
 import { auth } from "../utils/firebase";
@@ -7,9 +7,9 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { adduser } from "../utils/userSlice";
+import { NetflixBackGround } from "../utils/constants";
 
 const Login = () => {
   const [Signup, setSignup] = useState(false);
@@ -17,7 +17,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const username = useRef(null);
-  const navigate = useNavigate();
   const dispatch=useDispatch();
 
   const loginclick = () => {
@@ -27,6 +26,7 @@ const Login = () => {
       email.current.value,
       password.current.value
     );
+
     setermsg(msg);
     if (msg) return;
     if (Signup) {
@@ -46,7 +46,7 @@ const Login = () => {
                 adduser({ uid: uid, email: email, displayName: displayName })
               );
 
-              navigate("/browse");
+            
             })
             .catch((error) => {
               setermsg(error.message);
@@ -66,7 +66,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -75,6 +75,7 @@ const Login = () => {
         });
     }
   };
+  
   const toggle = () => {
     setSignup(!Signup);
   };
@@ -85,7 +86,7 @@ const Login = () => {
       <div className="">
         <img
           className=" h-screen w-screen brightness-40"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/cb72daa5-bd8d-408b-b949-1eaef000c377/web/IN-en-20250825-TRIFECTA-perspective_a3209894-0b01-4ddb-b57e-f32165e20a3f_large.jpg"
+          src={NetflixBackGround}
         />
       </div>
       <form
