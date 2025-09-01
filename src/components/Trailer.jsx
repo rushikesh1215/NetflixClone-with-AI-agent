@@ -35,7 +35,7 @@ console.log(trailervideo);
     <div >
       <iframe
         className="relative w-[100vw] h-[100vh] overflow-hidden"
-        src={"https://www.youtube.com/embed/" + trailervideo?.key+"?&autoplay=1&mute=1"}
+        // src={"https://www.youtube.com/embed/" + trailervideo?.key+"?&autoplay=1&mute=1"}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
     </div>

@@ -5,25 +5,20 @@ import { useDispatch } from "react-redux";
 import { addmovies } from "../utils/movieSlice";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import usetrending from "../hooks/usetrending";
+import useToprated from "../hooks/useToprated";
+import useMovies from "../hooks/useMovies";
 
 const Browse = () => {
-  const dispatch = useDispatch();
-
-  const movies = async () => {
-    const data = await fetch(url, ApiOption);
-    const json = await data.json();
-    dispatch(addmovies(json.results));
-  };
-
-  useEffect(() => {
-    movies();
-  }, []);
+  useMovies();
+  usetrending();
+  useToprated();
 
   return (
     <>
       <Header />
-<MainContainer/>
-<SecondaryContainer/>
+      <MainContainer />
+      <SecondaryContainer />
     </>
   );
 };
