@@ -1,4 +1,4 @@
-import  { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
 import { validate } from "../utils/validate";
 import { auth } from "../utils/firebase";
@@ -17,7 +17,7 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const username = useRef(null);
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const loginclick = () => {
     const msg = validate(
@@ -45,8 +45,6 @@ const Login = () => {
               dispatch(
                 adduser({ uid: uid, email: email, displayName: displayName })
               );
-
-            
             })
             .catch((error) => {
               setermsg(error.message);
@@ -66,7 +64,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -75,7 +72,7 @@ const Login = () => {
         });
     }
   };
-  
+
   const toggle = () => {
     setSignup(!Signup);
   };

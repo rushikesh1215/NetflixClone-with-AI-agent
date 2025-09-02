@@ -10,3 +10,5 @@ export const ApiOption = {
 
 export const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
 export const ImgPath="https://image.tmdb.org/t/p/w500/"
+
+export const gemini_api="AIzaSyCgYT8L96CdGI5HOwxrnkTtkB1TIWIW8Nk"

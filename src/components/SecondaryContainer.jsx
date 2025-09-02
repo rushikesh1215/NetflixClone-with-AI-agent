@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const SecondaryContainer = () => {
   const movieslist=useSelector(store=>store.movies);
-console.log(movieslist);
+// console.log(movieslist);
   return (
     <div >
       <div className='-mt-60 relative z-4 p-1' >
